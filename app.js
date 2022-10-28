@@ -47,4 +47,15 @@ mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
+
+
+app.get("*", (req, res) => {
+  res.json({
+    status: 404,
+    message:
+      "You're on the wrong way! go to the right way and jannah waiting for you brother!",
+  });
+});
+
+
 module.exports = app;
