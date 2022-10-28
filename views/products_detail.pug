@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+  div.intro
+    h1 #{product.name}
+    a.intro-btn(href=product.url+'/delete') Delete product  
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    dl
+      //- div product?.categories[0]?.name
+      div=product.name
+      div=product.price 
+      div=product.stock 
+      div product Category 
+      h2=product_category 
+      h2=product_brand
+      //- div CATEGORIES
+      //-   each category in product_categories
+      //-     div=category.name      
+      //- div BRAND 
+      //-   each brand in product_brand
+      //-     div=brand.name 

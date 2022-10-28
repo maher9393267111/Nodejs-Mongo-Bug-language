@@ -1,0 +1,17 @@
+extends layout
+
+block content 
+
+    div.intro
+        h1= title
+        a.intro-btn(href='/inventory/brands/add') Add new brand
+
+    ul 
+        each brand in brand_list 
+            li 
+                a(href=brand.url) #{brand.name}
+                div=brand.products
+
+        else 
+            li There is no brand yet, add it by 
+            a(href="/brands/add") clicking here

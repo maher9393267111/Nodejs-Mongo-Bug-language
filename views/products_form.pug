@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Product name:
+      input#name.form-control(
+        type='text', 
+        placeholder='Insert product name' 
+        name='name' 
+        required = 'true'
+        value=(undefined=== product ? '' : product.name))
+
+      label(for='price') Price:
+      input#price.form-control(
+        type='number', 
+        placeholder='Insert price' 
+        name='price' 
+        required = 'true'
+        value=(undefined=== product ? '' : product.price))
+
+      label(for='stock') Stock:
+      input#stock.form-control(
+        type='number', 
+        placeholder='Insert stock quantity' 
+        name='stock' 
+        required = 'true'
+        value=(undefined=== product ? '' : product.stock))
+
+      label(for='category') Select categories:
+        for category in categories
+          div(style='display: inline; padding-right:10px;')
+            input.checkbox-input(type='checkbox', name='category', id=category._id, value=category._id)
+            label(for=category._id) #{category.name}
+
+      label(for='brand') Select the brand:
+      select#brand.form-control(
+        type='select',
+        name='brand'
+        placeholder='Select brand' 
+        required = 'true'
+        )
+        for brand in brands
+          if brand
+            option(value=brand._id selected=(brand.id.toString() === brand._id.toString() ? "selected" : false)) #{brand.name}
+          else
+            option(value=brand._id) #{brand.name}
+
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+    h1 Error's message
+        ul
+            for error in errors
+                li!= error.msg

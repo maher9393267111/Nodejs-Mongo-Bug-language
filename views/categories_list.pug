@@ -1,0 +1,17 @@
+extends layout
+
+block content 
+
+    div.intro
+        h1= title
+        a.intro-btn(href='/inventory/categories/add') Add new category
+
+
+    ul 
+        each category in category_list 
+            li 
+                a(href=category.url) #{category.name}
+
+        else 
+            li There is no category yet, add it by 
+            a(href="/category/add") clicking here

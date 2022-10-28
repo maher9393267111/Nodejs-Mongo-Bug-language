@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+  div.intro
+    h1 Brand: #{brand.name}
+    a.intro-btn(href=brand.url+'/delete') Delete Brand
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Products
+
+    dl
+      each product in brand_product
+        dt
+          a(href=product.url) #{product.name}
+          div=product.price 
+          div=product.stock 
+          div=product.categories 
+
+        dd #{product.summary}
+
+      else
+        p This brand has no products yet.

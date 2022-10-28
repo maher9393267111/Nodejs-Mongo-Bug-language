@@ -1,0 +1,14 @@
+extends layout
+
+block content 
+
+    div.intro
+      h1= title
+      a.intro-btn(href='/inventory/products/add') Add new product
+
+    h4 There is #{item_count} products.
+
+    ul 
+        each product in list_product 
+            li 
+                a(href=product.url) #{product.name}

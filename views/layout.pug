@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    title Your inventory app
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z", crossorigin="anonymous")
+    script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV", crossorigin="anonymous")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header
+      div.px-3.py-2.bg-dark.header
+        div.container
+          div.d-flex.flex-wrap.logo-header-div
+            div.header-left
+              a(href='/')
+                img.bi.logo.logo-header(src='/images/stock-logo.webp' height='60')
+                a.d-flex.align-items-center.my-lg-0.me-lg-auto.text-white.text-decoration-none.title-header(href='/') INV.APP
+            
+            div.header-right
+              ul.nav.col-lg-auto.justify-content-center.my-md-0.text-small.nav-right
+                li.nav-link.text-white 
+                  a(href='/')
+                    img.bi.d-block(src='/images/home.svg' width='20' height='20')
+                    span.nav-text Home
+                li.nav-link.text-white
+                  a(href='/inventory/products/')
+                    img.bi.d-block(src='/images/products.svg' width='20' height='20')
+                    span.nav-text Products
+                li.nav-link.text-white
+                  a(href='/inventory/categories/')
+                    img.bi.d-block(src='/images/categories.svg' width='20' height='20')
+                    span.nav-text Categories
+                li.nav-link.text-white
+                  a(href='/inventory/brands/')
+                    img.bi.d-block(src='/images/brands.svg' width='20' height='20')
+                    span.nav-text Brands
+    div.content
+      block content
+

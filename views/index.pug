@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  div.intro
+    h1= title
+    a.intro-btn(href='/inventory/products') Check all products
+
+  div.countDiv 
+    div.prodDiv
+      div.divCount=prodCount    
+      div.divTitle Products
+    div.brandDiv
+      div.divCount=brandCount    
+      div.divTitle Brands
+    div.catCount
+      div.divCount=catCount    
+      div.divTitle Categories

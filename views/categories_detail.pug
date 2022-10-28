@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+  div.intro
+    h1 Category: #{categories.name}
+    a.intro-btn(href=categories.url+'/delete') Delete this category
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Products
+
+    dl
+      each product in products_category
+        dt
+          a(href=product.url) #{product.name}
+          div=product.price 
+          div=product.stock 
+          div=product.brand
+
+
+      else
+        p This category has no products yet.
